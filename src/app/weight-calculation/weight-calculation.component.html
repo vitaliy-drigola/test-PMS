@@ -1,0 +1,25 @@
+<h1>Расчет веса человека</h1>
+
+<div class="form-data"> 
+  <form #loginForm="ngForm">
+    <div class="form-data-item">  
+      <label for="">Возраст</label>
+      <input type="text" name='age' [(ngModel)]="age" required>
+    </div>
+    <div class="form-data-item"> 
+      <label for="">Рост</label>
+      <input type="text" name='height' [(ngModel)]="height" required>
+    </div>
+    <div class="form-data-item"> 
+      <label for="">Вес</label>
+      <input type="text" name='weight' [(ngModel)]="weight" required>
+    </div>
+
+    <button (click)="addNewHuman(age, height, weight)" class="btn1 btn" [disabled]="loginForm.form.invalid">Рассчитать</button>
+    
+    <button (click)=showAll() class="btn2 btn" [disabled]="!humans">{{btnText}}</button>
+
+  </form>
+</div>
+
+<app-list-all-result [humans]="humans" [showAllResults]="showAllResults"></app-list-all-result>
