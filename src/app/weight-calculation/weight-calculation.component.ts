@@ -50,12 +50,11 @@ export class WeightCalculationComponent implements OnInit {
 
     if (age >= this.indexYear) {
       this.bodyMassIndex = height - this.indexOld;
-      this.resultBodyMassIndex();
-
     } else {
       this.bodyMassIndex = height - this.indexYoung;
-      this.resultBodyMassIndex();
     }
+
+    this.resultBodyMassIndex();
 
     this.age = null;
     this.weight = null;
