@@ -34,9 +34,9 @@ export class WeightCalculationComponent implements OnInit {
 
   resultBodyMassIndex() {
     if (this.bodyMassIndex < this.weight) {
-      this.result = 'Вес выше нормы на ' + (this.weight - this.bodyMassIndex);
+      this.result = 'Вес выше нормы на ' + (this.weight - this.bodyMassIndex) + ' кг';
     } else if (this.bodyMassIndex > this.weight) {
-      this.result = 'Вес ниже нормы на ' + (this.weight - this.bodyMassIndex);
+      this.result = 'Вес ниже нормы на ' + (this.weight - this.bodyMassIndex) + ' кг';
     } else {
       this.result = 'Вес в норме';
     }
@@ -45,7 +45,8 @@ export class WeightCalculationComponent implements OnInit {
   }
 
   addNewHuman(age: number, height: number, weight: number) {
-    this.humanService.addHuman(age, height, weight);
+    this.resultBodyMassIndex();
+    this.humanService.addHuman(age, height, weight, this.result);
     this.humans = this.humanService.getData();
 
     if (age >= this.indexYear) {
@@ -53,8 +54,6 @@ export class WeightCalculationComponent implements OnInit {
     } else {
       this.bodyMassIndex = height - this.indexYoung;
     }
-
-    this.resultBodyMassIndex();
 
     this.age = null;
     this.weight = null;

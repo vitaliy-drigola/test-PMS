@@ -8,7 +8,7 @@ import { Human } from '../weight-calculation/human';
 })
 export class ListAllResultComponent implements OnInit {
 
-  @Input() humans: any[];
+  @Input() humans: Human[];
   @Input() showAllResults: boolean;
 
   constructor() { }

@@ -12,7 +12,7 @@ constructor() { }
         return this.humans;
     }
 
-    addHuman(age: number, height: number, weight: number) {
-        this.humans.push(new Human(age, height, weight));
+    addHuman(age: number, height: number, weight: number, result: string) {
+        this.humans.push(new Human(age, height, weight, result));
     }
 }

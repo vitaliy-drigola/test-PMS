@@ -1,7 +1,8 @@
 export class Human {
     constructor(protected age: number,
                 protected height: number,
-                protected weight: number) {}
+                protected weight: number,
+                protected result: string) {}
 
     getAge() {
         return this.age;
@@ -13,5 +14,9 @@ export class Human {
 
     getWeight() {
         return this.weight;
+    }
+
+    getResult() {
+        return this.result;
     }
 }
